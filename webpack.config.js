@@ -10,6 +10,10 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    devServer: {
+        contentBase: './dist',
+        hot: true
+    },
     module: {
         rules: [
             {
@@ -36,6 +40,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'test',
             template: 'public/index.html'
-        })
+        }),
     ]
 }

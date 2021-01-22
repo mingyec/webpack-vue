@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <p>eeee {{txt}}</p>
-    <button @click="onHandler">change</button>
+    <p>change text xx {{txt}}</p>
+    <button :style="{
+      color
+    }" @click="onHandler">change</button>
   </div>
 </template>
 
@@ -10,12 +12,14 @@ export default {
   name: 'App',
   data() {
     return {
-      txt: 'v1'
+      txt: 'v1',
+      color: '#aa05cc'
     }
   },
   methods: {
     onHandler() {
       this.txt = 'v2'
+      console.info('change');
     }
   }
 }
