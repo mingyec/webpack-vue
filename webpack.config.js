@@ -8,7 +8,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'images/[hash][ext][query]'
     },
     devServer: {
         contentBase: './dist',
@@ -31,6 +32,18 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024
+                    }
+                },
+                generator: {
+                    filename: 'static/[hash][ext][query]'
+                }
             }
         ]
     },

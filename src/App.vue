@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img src="./assets/logo.png" alt="logo">
     <p>change text xx {{txt}}</p>
     <button :style="{
       color
