@@ -4,16 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    entry: path.resolve(__dirname, '../src/index.js'),
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         assetModuleFilename: 'images/[hash][ext][query]'
-    },
-    devServer: {
-        contentBase: './dist',
-        hot: true
     },
     module: {
         rules: [
