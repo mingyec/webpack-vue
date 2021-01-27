@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
+const { TestPlugin } = require('../plugins-dist/TestPlugin.js');
+
 module.exports = merge(common, {
     mode: 'production',
     optimization: {
@@ -58,5 +60,6 @@ module.exports = merge(common, {
             title: 'test',
             template: 'public/index.html'
         }),
+        new TestPlugin()
     ]
 })
