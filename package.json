@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ts": "babel plugins -d plugins-dist --verbose --extensions .ts --ignore */**/*.d.ts,**/**/*.test.ts --source-maps && tsc --project tsconfig.types.json",
-    "build": "webpack --config build/webpack.prod.js",
+    "build": "npm run ts && webpack --config build/webpack.prod.js",
     "dev": "webpack serve --config build/webpack.dev.js"
   },
   "keywords": [],
